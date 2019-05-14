@@ -4,7 +4,8 @@
 
 <script>
 import * as THREE from 'three'
-import Orbitcontrols from 'three-orbitcontrols';
+import {OrbitControls} from './loaders/OrbitControls';
+// import Orbitcontrols from 'three-orbitcontrols';
 // require("three/examples/js/controls/OrbitControls");
 export default {
     name:'H04',
@@ -47,7 +48,7 @@ export default {
             document.body.appendChild(this.renderer.domElement);
  
             
-            this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+            this.controls = new OrbitControls(this.camera, this.renderer.domElement);
             this.controls.addEventListener('change', function () {
                 this.renderer.render(this.scene, this.camera);
             });

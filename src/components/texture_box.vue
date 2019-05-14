@@ -92,7 +92,7 @@ export default {
             this.render();
         },
         animate:function(){
-            this.mesh.rotation.x += 0.04;
+            // this.mesh.rotation.x += 0.04;
             this.mesh.rotation.y += 0.02;
             this.render();
             requestAnimationFrame(this.animate);

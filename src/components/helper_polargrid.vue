@@ -4,7 +4,7 @@
 
 <script>
 import * as THREE from 'three'
-import Orbitcontrols from 'three-orbitcontrols';
+import {OrbitControls} from './loaders/OrbitControls';
 
 export default {
     name:'H02',
@@ -43,15 +43,15 @@ export default {
             let circles = 8;
             let divisions = 64;
             let helper02 = new THREE.PolarGridHelper(radius, radials, circles, divisions);
-            helper02.position.set(0, -20, 0)
-            this.scene.add(helper02)
+            helper02.position.set(0, -20, 0);
+            this.scene.add(helper02);
  
             this.renderer = new THREE.WebGLRenderer();
             this.renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(this.renderer.domElement);
  
             //OrbitControls控件操作模块
-            this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+            this.controls = new OrbitControls(this.camera, this.renderer.domElement);
             this.controls.addEventListener('change', function () {
                 this.renderer.render(this.scene, this.camera);
             });

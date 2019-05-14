@@ -31,7 +31,7 @@ export default {
             this.sceneR = new THREE.Scene();
             this.sceneR.background = new THREE.Color(0x00ff00);
 
-            this.camera = new THREE.PerspectiveCamera(35,this.container.clientWidth/this.container.clientHeight,0.1,10);
+            this.camera = new THREE.PerspectiveCamera(40,this.container.clientWidth/this.container.clientHeight,0.1,10);
             this.camera.position.set(2,4,7);
 
             this.controls = new OrbitControls(this.camera,this.container);
@@ -79,18 +79,20 @@ export default {
         },
         render(){
             //将剪裁区域设为(x, y)到(x + width, y + height)
-            this.renderer.setScissor(0,0,this.sliderPos,window.innerHeight);
+            this.renderer.setScissor(0,0,this.sliderPos,window.innerHeight/2);
             this.renderer.render(this.sceneL,this.camera);
             //这个地方有些不懂？？？？
-            this.renderer.setScissor(this.sliderPos,0,window.innerWidth,window.innerHeight);
-            this.renderer.render(this.sceneR,this.camera);       
+            this.renderer.setScissor(this.sliderPos,0,window.innerWidth,window.innerHeight/2);
+            this.renderer.render(this.sceneR,this.camera);
+            this.renderer.setScissor(0,window.innerHeight/2,window.innerWidth,window.innerHeight);
+            this.renderer.render(this.sceneR,this.camera); 
         },
         onWindowResize(){
             this.camera.aspect = this.container.clientWidth/this.container.clientHeight;
             this.camera.updateProjectionMatrix();
 
             this.renderer.setSize(this.container.clientWidth,this.container.clientHeight);
-            if(!sliderMoved) this.sliderPos = window.innerWidth/2;
+            // if(!sliderMoved) this.sliderPos = window.innerWidth/2;
         },
         initComparisons(){
             let slider = document.querySelector('.slider');

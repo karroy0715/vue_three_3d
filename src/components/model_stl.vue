@@ -1,5 +1,5 @@
 <template>
-    <model-stl src="static/models/stl/colored.stl"></model-stl>
+    <model-stl src="static/models/stl/three.stl"></model-stl>
 </template>
 
 <script>

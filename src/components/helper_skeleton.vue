@@ -6,7 +6,7 @@
 import * as THREE from 'three'
 // import { ModelGltf } from 'vue-3d-model'
 import {GLTFLoader} from './loaders/GLTFLoader.js'
-import {Orbitcontrols} from './loaders/OrbitControls.js'
+import {OrbitControls} from './loaders/OrbitControls';
 
 
 export default {
@@ -116,7 +116,7 @@ export default {
             this.scene.add(mshStdBox);
 
             //OrbitControls控件操作模块
-            let controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+            let controls = new OrbitControls(this.camera, this.renderer.domElement);
             controls.autoRotate = true; //将自动旋转打开
             controls.autoRotateSpeed = 0.5;
             // controls.addEventListener('change', function () {
