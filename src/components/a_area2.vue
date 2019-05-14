@@ -118,7 +118,7 @@ export default {
                 let vheight = 2 * Math.tan(vFov * 0.5) *dist;
                 console.log('vheight值为:' + vheight );
                 let fraction = mdhei / vheight;
-                console.log('fraction值为:' + fraction );
+                // console.log('fraction值为:' + fraction );
 
                 let finalHeight = self.height * fraction ;                
                 console.log('finalHeight值为:' + finalHeight);
