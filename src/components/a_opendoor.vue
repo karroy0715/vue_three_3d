@@ -114,6 +114,7 @@ export default {
             this.scene.add(this.mesh6);
 
             let self = this;
+            
             this.controls = new function(){
                 this.target = "closeDoor";
             };

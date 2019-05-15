@@ -122,7 +122,8 @@ export default {
             // this.group.add(this.mesh4);
             // this.group.add(this.mesh5);
             // this.group.add(this.mesh6); 
-            this.scene.add(this.group);                  
+            this.scene.add(this.group); 
+                             
         }, 
         mousedown(event){
             if(event){
