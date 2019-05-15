@@ -46,6 +46,16 @@ export default new Router({
       component: () => import('@/components/a_jytouteng')
     },
     {
+      path: '/a_opendoor',
+      name: 'A7',
+      component: () => import('@/components/a_opendoor')
+    },
+    {
+      path: '/a_opendoor2',
+      name: 'A8',
+      component: () => import('@/components/a_opendoor2')
+    },
+    {
       path: '/HelloWorld',
       name: 'karroy',
       component: () => import('@/components/HelloWorld')
