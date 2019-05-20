@@ -1,4 +1,3 @@
-
 // @Description:three.js学习demo
 //  @Author:karroy
 //  @Data:2019-03-27
@@ -10,6 +9,17 @@ Vue.use(Router)
 export default new Router({
   
   routes: [
+    {
+      path: '/scale',
+      name: 'scale',
+      component: () => import('@/views/scale/index')
+    },
+    {
+      path: '/onoff',
+      name: 'switch',
+      component: () => import('@/views/switch/index')
+    },
+
     {
       path: '/a_squirrel',
       name: 'A1',
@@ -29,6 +39,11 @@ export default new Router({
       path: '/a_area2',
       name: 'A03',
       component: () => import('@/components/a_area2')
+    },
+    {
+      path: '/a_area3',
+      name: 'A003',
+      component: () => import('@/components/a_area3')
     },
     {
       path: '/a_areatest',
