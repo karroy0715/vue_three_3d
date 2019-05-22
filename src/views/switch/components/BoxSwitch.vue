@@ -10,6 +10,7 @@ import * as THREE from 'three'
 import * as dat from 'dat.gui'
 import {Stats} from '@/components/loaders/Stats.js'
 import {OrbitControls} from '@/components/loaders/OrbitControls'
+import { Color } from 'three';
 
 export default {
     name:'BoxSwitch',
@@ -74,37 +75,40 @@ export default {
             // meshMaterial.side = THREE.DoubleSide;//侧面渲染方式 两面
             // meshMaterial.side = THREE.FrontSide;
             // meshMaterial.side = THREE.BackSide;
-            material1.side = THREE.DoubleSide;
+            //material1.side = THREE.DoubleSide;
             this.mesh1 = new THREE.Mesh(geometry1,material1);
             this.mesh1.position.set(0,0,this.depth/2);
-            this.scene.add(this.mesh1);
+            //this.scene.add(this.mesh1);
 
 
             let texture3 = loader.load('/static/texture/squirrelbox/3.jpg');
             let material3 = new THREE.MeshLambertMaterial({map:texture3});
+            // material3.side = THREE.DoubleSide;
             this.mesh3 = new THREE.Mesh(geometry1,material3);
             this.mesh3.position.set(0,0,-this.depth/2);
             this.mesh3.rotation.x = -Math.PI;
             this.mesh3.rotation.z = -Math.PI;
-            this.scene.add(this.mesh3);
+            //this.scene.add(this.mesh3);
 
             let texture2 = loader.load('/static/texture/squirrelbox/2.jpg');
             let material2 = new THREE.MeshLambertMaterial({map:texture2});
-            material2.side = THREE.DoubleSide;
+            //material2.side = THREE.DoubleSide;
             this.mesh2 = new THREE.Mesh(geometry2,material2);
             this.mesh2.position.set(0,-this.height/2,0);
             this.mesh2.rotation.x = -Math.PI/2;
-            this.scene.add(this.mesh2);
+            //this.scene.add(this.mesh2);
 
             let texture4 = loader.load('/static/texture/squirrelbox/4.jpg');
             let material4 = new THREE.MeshLambertMaterial({map:texture4});
+            //material4.side = THREE.DoubleSide;
             this.mesh4 = new THREE.Mesh(geometry2,material4);
             this.mesh4.position.set(0,this.height/2,0);
             this.mesh4.rotation.x = -Math.PI/2;
-            this.scene.add(this.mesh4);
+            //this.scene.add(this.mesh4);
 
             let texture5 = loader.load('/static/texture/squirrelbox/5.jpg');
             let material5 = new THREE.MeshLambertMaterial({map:texture5});
+            //material5.side = THREE.DoubleSide;
             this.mesh5 = new THREE.Mesh(geometry3,material5);
             this.mesh5.position.set(-this.width/2,0,0);
             this.mesh5.rotation.y = -Math.PI/2;
@@ -112,9 +116,41 @@ export default {
 
             let texture6 = loader.load('/static/texture/squirrelbox/5.jpg');
             let material6 = new THREE.MeshLambertMaterial({map:texture6});
+            //material6.side = THREE.DoubleSide;
             this.mesh6 = new THREE.Mesh(geometry3,material6);
             this.mesh6.position.set(this.width/2,0,0);
             this.mesh6.rotation.y = Math.PI/2;
+            this.scene.add(this.mesh6);
+
+            let material0 = new THREE.MeshLambertMaterial({map:texture2});
+            let cube = new THREE.Mesh(geometry1,material0);
+            cube.rotation.y = Math.PI;
+            this.mesh1.add(cube);
+            this.scene.add(this.mesh1);
+
+            let cube3 = new THREE.Mesh(geometry1,material0);
+            cube3.rotation.y = Math.PI;
+            this.mesh3.add(cube3);
+            this.scene.add(this.mesh3);
+
+            let cube2 = new THREE.Mesh(geometry2,material0);
+            cube2.rotation.y = Math.PI;
+            this.mesh2.add(cube2);
+            this.scene.add(this.mesh2);
+
+            let cube4 = new THREE.Mesh(geometry2,material0);
+            cube4.rotation.y = Math.PI;
+            this.mesh4.add(cube4);
+            this.scene.add(this.mesh2);
+
+            let cube5 = new THREE.Mesh(geometry3,material0);
+            cube5.rotation.y = Math.PI;
+            this.mesh5.add(cube5);
+            this.scene.add(this.mesh5);
+
+            let cube6 = new THREE.Mesh(geometry3,material0);
+            cube6.rotation.y = Math.PI;
+            this.mesh6.add(cube6);
             this.scene.add(this.mesh6);
             
             let self = this;
