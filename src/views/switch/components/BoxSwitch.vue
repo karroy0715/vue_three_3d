@@ -153,7 +153,7 @@ export default {
             this.mesh6.add(cube6);
             this.scene.add(this.mesh6);
             
-            let self = this;
+            let self = this; 
 
             this.group = new THREE.Group();
             this.group.add(this.mesh1);
