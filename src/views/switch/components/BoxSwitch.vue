@@ -72,7 +72,7 @@ export default {
 
             let texture1 = loader.load('/static/texture/squirrelbox/1.jpg');
             let material1 = new THREE.MeshLambertMaterial({map:texture1});
-            // meshMaterial.side = THREE.DoubleSide;//侧面渲染方式 两面
+            // meshMaterial.side = THREE.DoubleSide;//渲染方式
             // meshMaterial.side = THREE.FrontSide;
             // meshMaterial.side = THREE.BackSide;
             //material1.side = THREE.DoubleSide;
