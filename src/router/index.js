@@ -15,6 +15,10 @@ export default new Router({
       component: () => import('@/views/scale/index')
     },
     {
+      path: '/show',
+      component: () => import('@/markdown/markdown')
+    },
+    {
       path: '/onoff',
       name: 'switch',
       component: () => import('@/views/switch/index')

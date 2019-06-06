@@ -50,6 +50,18 @@ module.exports = {
     rules: [
      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader',
+            options: {}
+          }
+        ]
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
