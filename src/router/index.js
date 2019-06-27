@@ -7,7 +7,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  
   routes: [
     {
       path: '/scale',
@@ -20,10 +19,14 @@ export default new Router({
     },
     {
       path: '/onoff',
-      name: 'switch',
+      name: 'onoff',
       component: () => import('@/views/switch/index')
     },
-
+    {
+      path: '/onoffnew',
+      name: 'onoffnew',
+      component: () => import('@/views/switchnew/index')
+    },
     {
       path: '/a_squirrel',
       name: 'A1',
@@ -216,6 +219,11 @@ export default new Router({
       component: () => import('@/components/helper_directionallight')
     },
     {
+      path: '/helper_hemispherelight',
+      name: 'H008',
+      component: () => import('@/components/helper_hemispherelight')
+    },
+    {
       path: '/helper_plane',
       name: 'H08',
       component: () => import('@/components/helper_plane')
@@ -224,7 +232,7 @@ export default new Router({
       path: '/helper_pointlight',
       name: 'H09',
       component: () => import('@/components/helper_pointlight')
-    },   
+    },
     {
       path: '/helper_rectlight',
       name: 'H10',
